@@ -3,6 +3,7 @@ import { userRoutes } from "../modules/User/user.route";
 import { AuthRoutes } from "../modules/Auth/auth.routes";
 import { ContactUsRoutes } from "../modules/ContactUs/ContactUs.routes";
 import { ReservationRoutes } from "../modules/Reservation/Reservation.routes";
+import { GoogleReviewsRoute } from "../modules/GoogleReviews/GoogleReviews.routes";
 
 
 const router = express.Router();
@@ -23,6 +24,10 @@ const moduleRoutes = [
   {
     path: "/reservation",
     route: ReservationRoutes,
+  },
+  {
+    path: "/reviews",
+    route: GoogleReviewsRoute,
   },
 
 ];

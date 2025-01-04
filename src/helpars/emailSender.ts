@@ -8,8 +8,8 @@ const emailSender = async (subject: string, email: string, html: string) => {
     port: 587,
     secure: false,
     auth: {
-      user: "belalhossain22000@gmail.com",
-      pass: "yhmc cins tgir yaof",
+      user: "bittengo@gmail.com",
+      pass: "xguo kovd ypbr ieyk",
     },
     tls: {
       rejectUnauthorized: false,
@@ -17,8 +17,8 @@ const emailSender = async (subject: string, email: string, html: string) => {
   });
 
   const info = await transporter.sendMail({
-    from: `"Bittengo" <belalhossain22000@gmail.com>`,
-    to: "belalhossain22000@gmail.com",
+    from: `"Bittengo" <bittengo@gmail.com>`,
+    to: "bittengo@gmail.com",
     subject: `${subject}`,
     html,
     replyTo: email,

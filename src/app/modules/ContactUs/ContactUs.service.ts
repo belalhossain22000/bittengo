@@ -5,7 +5,7 @@ const contactUs = (payload: {
   name: string;
   email: string;
   message: string;
-  phone: string;
+  phone_number: string;
 }) => {
   const subject = "Thank you for contacting us!";
   const htmlContent = `
@@ -51,6 +51,7 @@ const contactUs = (payload: {
         <div class="content">
           <p>We appreciate you reaching out to us. Here is a summary of your message:</p>
           <p><strong>Your Message:</strong></p>
+          <p><strong>${payload.phone_number}:</strong></p>
           <blockquote style="font-style: italic; color: #555;">
             ${payload.message}
           </blockquote>
