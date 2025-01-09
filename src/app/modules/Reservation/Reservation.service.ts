@@ -52,6 +52,7 @@ const createReservation = (payload: any) => {
               <p>Dear Customer,${payload.email} </p>
               <p>Thank you for your reservation! Here are the details of your booking:</p>
               <ul>
+                <li><strong>Car Name:</strong/>${payload.carName}</li>
                 <li><strong>Check-in:</strong> ${payload.checkInDate} at ${
     payload.checkInTime
   }</li>
