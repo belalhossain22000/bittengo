@@ -1,7 +1,17 @@
 import emailSender from "../../../helpars/emailSender";
 
-// Reservation.service: Module file for the Reservation.service functionality.
-const createReservation = (payload: any) => {
+interface Payload {
+  carName: string;
+  checkinDate: string;
+  checkoutDate: string;
+  checkinTime: string;
+  checkoutTime: string;
+  phoneNumber: string;
+  countryCode: string;
+  specialRequests: string;
+  email: string;
+}
+const createReservation = (payload: Payload) => {
   const subject = "Your Reservation Confirmation";
 
   const htmlContent = `
@@ -53,11 +63,11 @@ const createReservation = (payload: any) => {
               <p>Thank you for your reservation! Here are the details of your booking:</p>
               <ul>
                 <li><strong>Car Name:</strong/>${payload.carName}</li>
-                <li><strong>Check-in:</strong> ${payload.checkInDate} at ${
-    payload.checkInTime
+                <li><strong>Check-in:</strong> ${payload.checkinDate} at ${
+    payload.checkinTime
   }</li>
-                <li><strong>Check-out:</strong> ${payload.checkOutDate} at ${
-    payload.checkOutTime
+                <li><strong>Check-out:</strong> ${payload.checkoutDate} at ${
+    payload.checkoutTime
   }</li>
                 <li><strong>Phone Number:</strong> ${payload.phoneNumber}</li>
                 <li><strong>Special Requests:</strong> ${
@@ -75,7 +85,8 @@ const createReservation = (payload: any) => {
       </html>
     `;
 
-  // Send the email
+  console.log(payload);
+
   emailSender(payload.email, subject, htmlContent);
 };
 
